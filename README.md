@@ -1,24 +1,13 @@
-# README
+### Quick-as-a-flash-agram
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Instagram copy project
 
-Things you may want to cover:
+###### Intended functionality
+Replicate main functionality of Instagram. users can:
+- Create account
+- Add photos with captions
+- Edit & delete photos they have posted
+- Leave comments on photos
+- 'Like' a photo
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*Instruction on where app is hosted etc. to follow.*
