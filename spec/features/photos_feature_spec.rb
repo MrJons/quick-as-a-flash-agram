@@ -18,7 +18,9 @@ feature 'photos' do
       click_button('Post photo')
       expect(page).not_to have_content("Woops, looks like you haven't added any photos")
       expect(page).to have_content("A cat!")
-      expect(page).to have_xpath("//img[contains(@src,'cat.jpg')]")
+      # save_and_open_page
+      expect(page).to have_xpath("//img[contains(@src,'/images/quick-as-a-flash-agram.s3.amazonaws.com')]")
+
     end
   end
 end
