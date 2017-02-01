@@ -31,4 +31,14 @@ feature 'photos' do
       expect(page).to have_xpath("//img[contains(@src,'/images/quick-as-a-flash-agram.s3.amazonaws.com')]")
     end
   end
+
+  context 'photos can be removed' do
+    scenario 'user deletes a photo' do
+      visit '/photos'
+      add_photo
+      click_link('Delete')
+      expect(page).to have_content("Woops, looks like you haven't added any photos")
+      expect(page).not_to have_xpath("//img[contains(@src,'/images/quick-as-a-flash-agram.s3.amazonaws.com')]")
+    end
+  end
 end

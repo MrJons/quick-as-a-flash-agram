@@ -6,6 +6,7 @@
       <%= image_tag photo.image(:medium) %>
       <br>
       <%= link_to "Edit", edit_photo_path(photo) %>
+      <%= link_to "Delete", photo_path(photo), method: :delete %>
       <br>
       <%= photo.description %>
       <br>
