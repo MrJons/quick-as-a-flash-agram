@@ -1,12 +1,16 @@
 
 <% if @photos.any? %>
   <% @photos.each do |photo| %>
+
     <div class='post'>
       <%= image_tag photo.image(:medium) %>
+      <br>
+      <%= link_to "Edit", edit_photo_path(photo) %>
       <br>
       <%= photo.description %>
       <br>
     </div>
+
   <% end %>
 <% else %>
   <p>"Woops, looks like you haven't added any photos"</p>
