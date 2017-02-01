@@ -12,7 +12,8 @@ class PhotosController < ApplicationController
     @photo = Photo.new(photo_params)
 
     if @photo.save
-      redirect_to photos_path, notice: 'Picture was successfully added.'
+      redirect_to photos_path
+      flash[:notice] = 'Picture was successfully added.'
      else
        render action: 'new'
     end
@@ -26,7 +27,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
 
     if @photo.update_attributes(photo_params)
-      redirect_to photos_path, notice: 'Picture was successfully added.'
+      redirect_to photos_path
      else
        render action: 'edit'
     end
@@ -37,6 +38,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @photo.destroy
     redirect_to photos_path
+    flash[:notice] = 'Post successfully deleted'
   end
 
   private
