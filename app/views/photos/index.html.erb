@@ -3,7 +3,7 @@
   <% @photos.each do |photo| %>
 
     <div class='post'>
-      <%= image_tag photo.image(:medium) %>
+      <%= image_tag photo.image(:large) %>
       <br>
       <%= link_to "Edit", edit_photo_path(photo) %>
       <%= link_to "Delete", photo_path(photo), method: :delete %>

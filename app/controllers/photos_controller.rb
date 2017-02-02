@@ -11,7 +11,7 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
 
-    if @photo.save
+    if @photo.save!
       redirect_to photos_path, notice: "Picture was successfully added."
      else
        render action: 'new'
