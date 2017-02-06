@@ -1,18 +1,30 @@
 
-<% if @photos.any? %>
-  <% @photos.each do |photo| %>
+<!-- 1st column, using 3 to center body content -->
+<div class="col-xs-4"></div>
 
-    <div class='post'>
-      <%= image_tag photo.image(:large) %>
-      <br>
-      <%= link_to "Edit", edit_photo_path(photo) %>
-      <%= link_to "Delete", photo_path(photo), method: :delete %>
-      <br>
-      <%= photo.description %>
-      <br>
-    </div>
+<div class='post container-fluid col-xs-4 text-center'
+     style="border:1px solid #cecece; padding: 10px;">
+  <% if @photos.any? %>
+    <% @photos.each do |photo| %>
+      <div class='post-image' style='padding-bottom: 10px;'>
+        <%= image_tag photo.image(:large) %>
+      </div>
 
+      <div class='post-options text-left'>
+        <%= link_to "Edit", edit_photo_path(photo) %> |
+        <%= link_to "Delete", photo_path(photo), method: :delete %>
+      </div>
+
+      <div class='post-description text-left' style='padding-top: 5px;'>
+        <strong>This is...</strong>
+        <%= photo.description %>
+      </div>
+
+    <% end %>
+  <% else %>
+    <p>"Woops, looks like you haven't added any photos"</p>
   <% end %>
-<% else %>
-  <p>"Woops, looks like you haven't added any photos"</p>
-<% end %>
+</div>
+
+<!-- 3rd column -->
+<div class="col-xs-4"></div>
