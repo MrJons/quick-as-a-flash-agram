@@ -5,7 +5,7 @@ feature 'photos' do
     scenario 'should display prompt to add photos' do
       visit '/photos'
       expect(page).to have_content("Woops, looks like you haven't added any photos")
-      expect(page).to have_link("Add photo")
+      expect(page).to have_link("New post")
     end
   end
 
@@ -13,6 +13,7 @@ feature 'photos' do
     scenario 'user adds a photo' do
       visit '/photos'
       add_photo
+      expect(current_path).to eq('/photos')
       expect(page).not_to have_content("Woops, looks like you haven't added any photos")
       expect(page).to have_content("A cat!")
       expect(page).to have_xpath("//img[contains(@src,'/images/quick-as-a-flash-agram.s3.amazonaws.com')]")
